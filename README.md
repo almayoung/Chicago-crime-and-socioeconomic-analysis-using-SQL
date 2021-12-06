@@ -14,15 +14,16 @@
 
  ![image](https://user-images.githubusercontent.com/16657494/144781569-d7b4a7b1-ed24-4efa-b765-32ca938a5129.png)
   
-* **DISPLAY ROBBERY THAT OCCURED IN THE STREET**
+* **DISPLAY ROBBERY THAT OCCURED IN AN APARTMENT*
 ```
 SELECT [Primary Type], [Description], [Location Description]
 FROM [dbo].[Crimes]
 WHERE [Primary Type] = 'ROBBERY'
-AND [Location Description] = 'STREET';
+AND [Location Description] = 'APARTMENT';
 ```
 
-![image](https://user-images.githubusercontent.com/16657494/144782143-a225cb46-98a0-471e-90b1-d1de747314f8.png)
+![image](https://user-images.githubusercontent.com/16657494/144938683-e84a911a-ff78-4285-8ec7-88bee152ffbb.png)
+
 
 * **DISPLAY UNIQUE CRIME IN THE PRIMARY TYPE COLUMN**
 
