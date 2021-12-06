@@ -14,7 +14,7 @@
 
  ![image](https://user-images.githubusercontent.com/16657494/144781569-d7b4a7b1-ed24-4efa-b765-32ca938a5129.png)
   
-* **DISPLAY ROBBERY THAT OCCURED IN AN APARTMENT*
+* **DISPLAY ROBBERY THAT OCCURED IN AN APARTMENT**
 ```
 SELECT [Primary Type], [Description], [Location Description]
 FROM [dbo].[Crimes]
