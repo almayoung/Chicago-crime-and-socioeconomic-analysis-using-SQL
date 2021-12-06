@@ -8,6 +8,21 @@
 ## **EXPLORING CHICAGO CRIME DATASET**
 
 
-     Display first 10 records
-    
-![image](https://user-images.githubusercontent.com/16657494/144779930-37c5ed78-a3b2-4efc-bd47-4578938bff21.png)
+* **DISPLAY THE FIRST 10 RECORDS**
+
+` SELECT TOP 10 * FROM [dbo].[Crimes];`
+
+ ![image](https://user-images.githubusercontent.com/16657494/144781569-d7b4a7b1-ed24-4efa-b765-32ca938a5129.png)
+  
+* **DISPLAY ROBBERY THAT OCCURED IN THE STREET**
+```
+SELECT [Primary Type], [Description], [Location Description]
+FROM [dbo].[Crimes]
+WHERE [Primary Type] = 'ROBBERY'
+AND [Location Description] = 'STREET';
+```
+
+![image](https://user-images.githubusercontent.com/16657494/144782143-a225cb46-98a0-471e-90b1-d1de747314f8.png)
+
+
+
