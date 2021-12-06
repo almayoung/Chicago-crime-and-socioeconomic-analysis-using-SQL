@@ -47,3 +47,14 @@ WHERE [Primary Type] = 'HOMICIDE';
 ```
 ![image](https://user-images.githubusercontent.com/16657494/144782936-5bdfa093-54f3-4f05-b1cb-fb51e8317b2a.png)
 
+* **WHAT TYPES OF CRIMES ARE COMMITED MOST FREQUENTLY?**
+```
+SELECT [Primary Type], COUNT(*) AS Total_Crimes
+FROM [dbo].[Crimes]
+GROUP BY [Primary Type]
+ORDER BY Total_Crimes DESC;
+```
+![image](https://user-images.githubusercontent.com/16657494/144939434-7a656c08-e70b-42f8-a70c-aa24277a83b2.png)
+
+
+
