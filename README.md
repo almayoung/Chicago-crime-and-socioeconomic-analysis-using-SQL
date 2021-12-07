@@ -66,4 +66,28 @@ ORDER BY Number_of_Crimes DESC;
 
 ![image](https://user-images.githubusercontent.com/16657494/144947883-44765cf0-1130-4558-b867-40fc455a81cc.png)
 
+* **HOW MANY CRIMES INVOLVE AN ARREST?**
+```
+SELECT COUNT(ARREST) AS Arrested
+FROM [dbo].[Crimes]
+WHERE Arrest = 'TRUE';
+```
+![image](https://user-images.githubusercontent.com/16657494/144948159-72bc4f7c-1932-4423-a18c-d1c1deae7a3d.png)
 
+* **HOW MANY CRIMES INVOLVE WITH NO ARREST?**
+```
+SELECT COUNT(ARREST) AS Not_Arrested
+FROM [dbo].[Crimes]
+WHERE Arrest = 'FALSE';
+```
+
+![image](https://user-images.githubusercontent.com/16657494/144948277-66e6a59e-f357-4119-9919-3afcc18bc936.png)
+
+* **WHICH UNIQUE TYPES OF CRIMES HAVE BEEN RECORDED AT GAS STATION LOCATIONS?**
+```
+SELECT DISTINCT [Primary Type]
+FROM [dbo].[Crimes]
+WHERE [Location Description] = 'GAS STATION';
+```
+
+![image](https://user-images.githubusercontent.com/16657494/144948467-1f49beb6-8727-409c-97c5-56c4a7346ea5.png)
