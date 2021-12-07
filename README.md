@@ -56,5 +56,14 @@ ORDER BY Total_Crimes DESC;
 ```
 ![image](https://user-images.githubusercontent.com/16657494/144939434-7a656c08-e70b-42f8-a70c-aa24277a83b2.png)
 
+* **WHERE ARE THE FREQUENT CRIMES BEING COMMITTED?**
+```
+SELECT [Location Description], COUNT(*) AS Number_of_Crimes
+FROM [dbo].[Crimes]
+GROUP BY [Location Description]
+ORDER BY Number_of_Crimes DESC;
+```
+
+![image](https://user-images.githubusercontent.com/16657494/144947883-44765cf0-1130-4558-b867-40fc455a81cc.png)
 
 
