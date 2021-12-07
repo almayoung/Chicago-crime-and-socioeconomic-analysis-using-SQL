@@ -91,3 +91,56 @@ WHERE [Location Description] = 'GAS STATION';
 ```
 
 ![image](https://user-images.githubusercontent.com/16657494/144948467-1f49beb6-8727-409c-97c5-56c4a7346ea5.png)
+
+* **DISPLAY ALL TYPYES OF CRIMES THAT START WITH LETTER 'A'**
+```
+SELECT DISTINCT [Primary Type]
+FROM [dbo].[Crimes]
+WHERE [Primary Type] LIKE 'A%';
+```
+![image](https://user-images.githubusercontent.com/16657494/144953134-bdc097b3-03d4-4592-96f5-d8423b7544ee.png)
+
+## **EXPLORING CHICAGO SOCIECONOMIC DATASET**
+
+* **DISPLAY COMMUNITY AREAS IN CHICAGO WITH A HARDSHIP INDEX GREATER THAN 50.0**
+```
+SELECT [COMMUNITY AREA NAME]
+FROM [dbo].[Socioeconomic_indicators]
+WHERE [HARDSHIP INDEX] > 50.0
+GROUP BY [COMMUNITY AREA NAME];
+```
+![image](https://user-images.githubusercontent.com/16657494/144954663-04e43648-515d-4c71-b828-1c8f86c12aa9.png)
+
+
+* **WHICH COMMUNITY AREA HAS 'PARK' IN ITS NAME?**
+```
+SELECT [COMMUNITY AREA NAME]
+FROM [dbo].[Socioeconomic_indicators]
+WHERE [COMMUNITY AREA NAME] LIKE '%Park%';
+```
+
+![image](https://user-images.githubusercontent.com/16657494/144953621-602fa29e-7de8-4639-a178-4bfd9ada1dd7.png)
+
+* **WHICH COMMUNITY AREA HAS THE HIGHEST PERCENT HOUSEHOLDS BELOW POVERTY?**
+```
+SELECT DISTINCT [COMMUNITY AREA NAME], [PERCENT HOUSEHOLDS BELOW POVERTY]
+FROM [dbo].[Crimes] CR
+LEFT JOIN [dbo].[Socioeconomic_indicators] SI
+ON SI.[Community Area Number] = CR.[Community Area Number]
+ORDER BY [PERCENT HOUSEHOLDS BELOW POVERTY] DESC;
+```
+![image](https://user-images.githubusercontent.com/16657494/144954945-5701e16c-412b-4f8d-859e-1c2341241429.png)
+
+
+* **WHICH COMMUNITY AREA HAS THE MOST CRIMES?**
+```
+SELECT [COMMUNITY AREA NAME], COUNT([Primary Type]) AS Number_of_Crimes
+FROM [dbo].[Crimes] CR
+LEFT JOIN [dbo].[Socioeconomic_indicators] SI
+ON SI.[Community Area Number] = CR.[Community Area Number]
+GROUP BY [COMMUNITY AREA NAME]
+ORDER BY Number_of_Crimes DESC;
+```
+
+![image](https://user-images.githubusercontent.com/16657494/144955355-3f30ac6a-80bf-48ba-a654-d787c044ed3d.png)
+
